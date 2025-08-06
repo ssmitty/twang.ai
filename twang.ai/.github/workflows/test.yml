@@ -1,0 +1,20 @@
+name: Test Workflow
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Test
+        run: |
+          echo "GitHub Actions is working!"
+          ls -la
+          echo "Files in twang.ai folder:"
+          ls -la twang.ai/ || echo "twang.ai folder not found" 
