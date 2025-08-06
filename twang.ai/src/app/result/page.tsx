@@ -1,8 +1,8 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function ResultPage() {
+function ResultContent() {
   const searchParams = useSearchParams();
   const [lyrics, setLyrics] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -33,5 +33,13 @@ export default function ResultPage() {
         <pre className="whitespace-pre-wrap bg-gray-100 p-6 rounded shadow max-w-2xl text-lg text-black">{lyrics}</pre>
       )}
     </main>
+  );
+}
+
+export default function ResultPage() {
+  return (
+    <Suspense fallback={<div className="flex flex-col items-center justify-center min-h-[60vh] gap-8"><div className="text-lg text-gray-500">Loading...</div></div>}>
+      <ResultContent />
+    </Suspense>
   );
 } 

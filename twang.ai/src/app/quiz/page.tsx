@@ -18,7 +18,7 @@ export default function QuizPage() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const params = new URLSearchParams(form as any).toString();
+    const params = new URLSearchParams(form as Record<string, string>).toString();
     router.push(`/result?${params}`);
   }
 
