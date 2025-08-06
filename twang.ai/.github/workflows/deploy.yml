@@ -26,17 +26,13 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: twang-ai/package-lock.json
+          cache-dependency-path: package-lock.json
       
       - name: Install dependencies
-        run: |
-          cd twang-ai
-          npm ci
+        run: npm ci
       
       - name: Build with Next.js
-        run: |
-          cd twang-ai
-          npm run build
+        run: npm run build
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -44,7 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: twang-ai/out
+          path: out
 
   deploy:
     environment:
