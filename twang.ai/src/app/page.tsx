@@ -6,7 +6,7 @@ export default function Home() {
         Generate custom country music lyrics with the help of AI! Take a quick quiz about your mood, song speed, tempo, and more, and let our AI craft the perfect country song for you.
       </p>
       <a
-        href="/quiz"
+        href="/quiz/"
         className="mt-4 px-8 py-3 bg-blue-600 text-white rounded-full text-lg font-semibold shadow hover:bg-blue-700 transition"
       >
         Start the Quiz

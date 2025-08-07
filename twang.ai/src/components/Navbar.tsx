@@ -6,7 +6,7 @@ export default function Navbar() {
       <div className="text-xl font-bold text-blue-700">twang.ai</div>
       <div className="flex gap-6">
         <Link href="/" className="hover:underline text-black">Home</Link>
-        <Link href="/quiz" className="hover:underline text-black">Quiz</Link>
+        <Link href="/quiz/" className="hover:underline text-black">Quiz</Link>
       </div>
     </nav>
   );
